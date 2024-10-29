@@ -24,17 +24,22 @@ const MainLayout = () => {
       return matchBrand && matchCategory && matchPrice && matchRating;
     });
 
-    if(searchVal == ""){
-        setFiltered(data);
-        return
-    }
+    // if(searchVal == ""){
+    //     setFiltered(data);
+    // }else{
+    //     const searched = filteredData.filter(item =>
+    //         item.name.toLowerCase().includes(searchVal.toLowerCase())
+            
+    //     );
+        
+    // setFiltered(searched);
+    // }
+    
     const searched = filteredData.filter(item =>
-        item.name.toLowerCase().includes(searchVal.toLowerCase())
-    );
+                item.name.toLowerCase().includes(searchVal.toLowerCase()) );
 
+       setFiltered(searched);
 
-    setFiltered(searched);
-    // setFiltered(filteredData);
 
 
   };
@@ -109,8 +114,9 @@ applyFilters()
 
   return (
     <div className="Main_Layout_Container">
+
       <aside className="Nav">
-        <h2>Filter by</h2>
+        {/* <h2>Filter by</h2> */}
         <div className="filterItem">
           <p>Brand Name</p>
           <select onChange={handleSelect}>
@@ -147,6 +153,8 @@ applyFilters()
           ))}
         </main>
       </div>
+
+
     </div>
   );
 };
