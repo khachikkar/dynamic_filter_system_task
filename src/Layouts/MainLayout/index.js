@@ -112,11 +112,25 @@ applyFilters()
 
   const debouncedHandleRating = debounce(handleRating, 2000);
 
+
+  const [isAsideOpen, setIsAsideOpen] = useState(true);
+
+  const toggleAside = () => {
+    setIsAsideOpen((prev) => !prev);
+  };
+
+
+
+
   return (
     <div className="Main_Layout_Container">
 
       <aside className="Nav">
         {/* <h2>Filter by</h2> */}
+
+
+        {isAsideOpen &&
+        <div className="aside">
         <div className="filterItem">
           <p>Brand Name</p>
           <select onChange={handleSelect}>
@@ -143,6 +157,13 @@ applyFilters()
           <p>Price</p>
           <Slider className="pricer" range defaultValue={[40, 100]} max={600} onChange={debouncedHandlePrice} />
         </div>
+        </div>
+        }
+
+<button onClick={toggleAside}>
+          {isAsideOpen ? "Collapse" : "Expand"}
+</button>
+
       </aside>
 
       <div className="Content">
