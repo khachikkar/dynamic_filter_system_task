@@ -169,9 +169,12 @@ applyFilters()
       <div className="Content">
         <input onChange={(e)=>handleSearch(e)} value={searchVal} placeholder="Search Item" />
         <main>
-          {filtered.map((item) => (
+          {filtered.length >0 
+          ? filtered.map((item) => (
             <ProductItem data={item} key={item.id} />
-          ))}
+          ))
+          : <p>No Data</p>
+        }
         </main>
       </div>
 
