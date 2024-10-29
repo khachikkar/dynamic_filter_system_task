@@ -43,5 +43,14 @@ export const data = [
       "price": 199.99,
       "rating": 4.7,
       "imageUrl": "https://example.com/images/jacket.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Leather Blose",
+      "category": "Clothing",
+      "brand": "Brand C",
+      "price": 200.99,
+      "rating": 4.7,
+      "imageUrl": "https://example.com/images/jacket.jpg"
     }
   ]
